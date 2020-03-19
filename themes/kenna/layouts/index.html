@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenna - A Hugo + NetlifyCMS boilerplate for teachers.</title>
+</head>
+
+<body>
+    <section>
+        <div class="header">
+            <h1>Kenna - A Hugo + NetlifyCMS boilerplate for teachers.</h1>
+            <p>Made with &lt;3 by <a href="https://github.com/kewbish">Kewbish</a>.</p>
+        </div>
+    </section>
+    <section>
+        <div class="main-split">
+            <div>
+                <h1>Header for your first class</h1>
+                {{ range (where .Site.Pages "Params.class" "classid1").ByDate.Reverse }}
+                <a href="{{ .Permalink }}/index.html"><h2>{{ .Title }}</h2></a>
+                <p>{{ .Description }} - {{ .PublishDate.Format "02 January 2006" }}</p>
+                {{ end }}
+            </div>
+            <div>
+                <h1>Header for your second class</h1>
+                {{ range (where .Site.Pages "Params.class" "classid2").ByDate.Reverse }}
+                <a href="{{ .Permalink }}/index.html"><h2>{{ .Title }}</h2></a>
+                <p>{{ .Description }} - {{ .PublishDate.Format "02 January 2006" }}</p>
+                {{ end }}
+            </div>
+            <!--
+                You can add more classes; just copy-paste the following:
+                <div>
+                    <h1>Header for your second class</h1>
+                    {{ range (where .Site.Pages "Params.series" "post").ByDate.Reverse }}
+                    <a href="{{ .Permalink }}/index.html"><h2>{{ .Title }}</h2></a>
+                    <p>{{ .Description }} - {{ .PublishDate.Format "02 January 2006" }}</p>
+                    {{ end }}
+                </div>
+            -->
+        </div>
+    </section>
+</body>
+
+</html>
