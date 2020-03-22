@@ -2,4 +2,5 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Kenna - A Hugo + NetlifyCMS boilerplate for teachers."
 theme = "kenna"
+relativeURLs = true
 disableKinds = ["taxonomy", "taxonomyTerm"]

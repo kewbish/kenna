@@ -1,7 +1,8 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-series: "year-one"
+publishdate: {{ .Date }}
+class: "classid1"
 draft: true
 ---
 
