@@ -63,6 +63,7 @@ a{
     box-shadow: 15px 15px var(--background-shadow);
     padding: 20px;
 }
+/*
 button{
     background-color: var(--button-background);
 	border-radius: 28px;
@@ -75,6 +76,7 @@ button{
     font-size: 20px;
     box-sizing: border-box;
 }
+*/
 .main-split{
     display: grid;
     grid-template-columns: 1fr 1fr;
