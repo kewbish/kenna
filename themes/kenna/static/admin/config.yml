@@ -1,19 +1,18 @@
 backend:
-  name: git-gateway
-  branch: gh-pages
-  repo: kenna/kewbish.github.io
-  site_domain: octopus-cat-123456.netlify.com
+  name: github
+  repo: kewbish/kenna
 media_folder: static/img
-public_folder: /img
 collections:
   - name: 'Kenna'
     label: 'Kenna'
     folder: 'content/'
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'publishdate', widget: 'datetime' }
       - { label: 'Due Date', name: 'date', widget: 'datetime' }
+      - { label: 'Class', name: class, widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }

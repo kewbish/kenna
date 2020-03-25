@@ -8,7 +8,8 @@
     --color-two: #ba97e2;
     --font-one: Montserrat;
     --font-two: "Abril Fatface";
-  }
+    --back-image: url("https://images.unsplash.com/photo-1477511801984-4ad318ed9846?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+}
 *{
     padding: 0;
     margin: 0;
@@ -49,7 +50,7 @@ a{
     flex-direction: column;
     background-image: 
         linear-gradient(var(--cover-gradient), var(--cover-gradient)),    
-        url("https://images.unsplash.com/photo-1477511801984-4ad318ed9846?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+        var(--back-image);
     background-size: cover;
     height: 70vh;
     color: var(--base-two);
@@ -63,7 +64,6 @@ a{
     box-shadow: 15px 15px var(--background-shadow);
     padding: 20px;
 }
-/*
 button{
     background-color: var(--button-background);
 	border-radius: 28px;
@@ -75,8 +75,8 @@ button{
     font-family: var(--font-one);
     font-size: 20px;
     box-sizing: border-box;
+    cursor: pointer;
 }
-*/
 .main-split{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -93,7 +93,10 @@ button{
     padding: 10px;
 }
 .single{
-    background-color: var(--color-two);
+    /*background-color: var(--color-two);*/
+    background-image: 
+        linear-gradient(var(--cover-gradient), var(--cover-gradient)),
+        var(--back-image);
 }
 .single-wrapper{
     margin: 3%;
