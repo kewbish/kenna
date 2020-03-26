@@ -3,11 +3,37 @@ backend:
   repo: kewbish/kenna
 media_folder: static/img
 collections:
-  - name: 'Kenna'
-    label: 'Kenna'
-    folder: 'content/'
+  - name: 'classid1'
+    label: 'Kenna Post - ClassId1'
+    folder: 'content/classid1'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}{{month}}{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'publishdate', widget: 'datetime' }
+      - { label: 'Due Date', name: 'date', widget: 'datetime' }
+      - { label: 'Class', name: class, widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'classid2'
+    label: 'Kenna Post - ClassId2'
+    folder: 'content/classid2'
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'publishdate', widget: 'datetime' }
+      - { label: 'Due Date', name: 'date', widget: 'datetime' }
+      - { label: 'Class', name: class, widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'classid3'
+    label: 'Kenna Post - ClassId3'
+    folder: 'content/classid3'
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{slug}}"
     editor:
       preview: true
     fields:
