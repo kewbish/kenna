@@ -97,6 +97,7 @@ button{
     background-image: 
         linear-gradient(var(--cover-gradient), var(--cover-gradient)),
         var(--back-image);
+    background-size: cover;
 }
 .single-wrapper{
     margin: 3%;

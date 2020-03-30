@@ -98,17 +98,17 @@ Sign up for a GitHub account. Create a repository by clicking the `+` button in 
 Navigate to `themes\kenna\layouts\static\admin\config.yml` and open it in Notepad. Change the `repo: kewbish/kenna` line to `repo: yourusername/yourusername.github.io`.  
 Navigate to [this link](https://github.com/settings/developers), and make a `New OAuth App`. Put whatever you'd like for the name, but ensure that the Homepage URL is `yourusername.github.io`, where yourusername is your username. As well, make sure the `Authorization callback URL` goes to `https://api.netlify.com/auth/done`.  
 This will generate a GitHub OAuth app. Keep this page open.  
-Next, you'll need to sign up for a Netlify.com account. Sign in with your GitHub account.  
-Add a new site from Git, and choose your site's repository. This should look like `yourusername/yourusername.github.io`.  
-Next, navigate into the site `Settings > Access Control > OAuth`. Click the `Install provider` button.  
-Choose GitHub as the provider, and copy your client ID and secret from the GitHub New OAuth app page.  
 Finish customizing your site here - change colours, classes, and everything else while you're here.
 Once you're 100% customizing your site, open `Terminal` or `Command Prompt` and navigate to your folder. Usually, you can do this by opening the site folder in a File Explorer, and right-click to select `Open in Terminal` or `Open in Command Prompt`.  
 Check that there isn't a `public` folder in File Explorer. If there is, delete it.  
 Run `hugo`, which will generate a `public` folder.  
 Open GitHub, and open your repository you just created. Click the `Upload files` button (next to the `Clone or download` section), and upload the contents of the `public` folder, not including the folder itself. Add a commit message if you'd like, and click `Commit` at the bottom.  
-Go back to the repository, and open its settings page. Find the `GitHub Pages` area, and in the Source, choose `master`.
-You may have to wait a while as GitHub Pages processes files, but otherwise, the site will appear at `yourusername.github.io` (replace yourusername with your username) when you navigate there in a web browser.  
+Next, you'll need to sign up for a Netlify.com account. Sign in with your GitHub account.  
+Add a new site from Git, and choose your site's repository. This should look like `yourusername/yourusername.github.io`. If prompted for a generation command, provide `hugo` and `public` as the publishing directory.   
+Next, navigate into the site `Settings > Access Control > OAuth`. Click the `Install provider` button.  
+Choose GitHub as the provider, and copy your client ID and secret from the GitHub New OAuth app page.  
+Wait as the site generates on Netlify. In the meantime, you can customize your domain by going into `Domain Settings > Custom domains > Options > Edit site name`.   
+Your website should soon be live! A link is provided by Netlify to share your domain.
 
 ## Adding a post
 ### Web interface

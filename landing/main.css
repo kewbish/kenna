@@ -1,0 +1,31 @@
+.hero-back{
+    background: linear-gradient(#54346e, #9c5cd8);
+}
+section{
+    margin: 7% 0;
+}
+.features{
+    background: linear-gradient(#54346e, #9c5cd8);
+    padding: 7%;
+}
+#no-padding{
+    padding: 0;
+}
+.light{
+    background: linear-gradient(#dddddd, #f3f3f3); 
+}
+.last{
+    margin-bottom: 0;
+    padding: 3%;
+}
+.first{
+    margin-top: 0;
+}
+.link{
+    color: white;
+    text-decoration: underline;
+}
+html{
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
