@@ -7,6 +7,8 @@
     <title>Kenna - Generator</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.1/css/bulma.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.2.2/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -28,36 +30,42 @@
         <div class="container">
             <div class="box light" id="gen">
                 <h1 class="title">Just a couple questions.</h1>
-                <form action="">
+                <form v-on:submit.prevent="generateZip">
                     <div class="field">
                         <label class="label">How many classes do you teach?</label>
                         <div class="control">
-                            <input class="input" type="number" placeholder="3">
+                            <input class="input" type="number" placeholder="3" v-model="numClasses">
                         </div>
                     </div>
-                    <div class="field">
-                        <label class="label">What's the name of class #1?</label>
+                    <div class="field" v-for="n in intClasses">
+                        <label class="label">What's the name of class #{{n}}?</label>
                         <div class="control">
-                            <input type="text" class="input" placeholder="English">
+                            <input type="text" class="input" placeholder="English" v-model="classNames[n-1]">
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">What's your email?</label>
                         <div class="control">
-                            <input type="email" class="input" placeholder="hello@kenna.com">
+                            <input type="email" class="input" placeholder="hello@kenna.com" v-model="email">
                             <p class="is-help">This will be used only as a contact and displayed to your students.</p>
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">Name your Kenna.</label>
                         <div class="control">
-                            <input type="text" class="input" placeholder="Kenna Academy - English">
+                            <input type="text" class="input" placeholder="Kenna Academy" v-model="kennaName">
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">Describe your Kenna.</label>
                         <div class="control">
-                            <input type="text" class="input" placeholder="Built with 💖 with Kenna">
+                            <input type="text" class="input" placeholder="Built with 💖 with Kenna" v-model="kennaDesc">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Theme your Kenna.</label>
+                        <div class="control">
+                            <input type="text" class="input" placeholder="kenna-lavender" v-model="kennaTheme">
                         </div>
                     </div>
                     <div class="field">
@@ -73,6 +81,7 @@
         <h1 class="subtitle has-text-white"><a class="link" href="https://github.com/kewbish/kenna">Kenna</a> by <a
                 class="link" href="https://kewbish.github.io">Kewbish</a> - Open Source under the MIT License.</p>
     </footer>
+    <script src="generator.js"></script>
 </body>
 
 </html>
