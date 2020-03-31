@@ -11,8 +11,11 @@ section{
 #no-padding{
     padding: 0;
 }
+.no-margin{
+    margin: 0;
+}
 .light{
-    background: linear-gradient(#dddddd, #f3f3f3); 
+    background: linear-gradient(#d8d8d8, #e9e9e9); 
 }
 .last{
     margin-bottom: 0;

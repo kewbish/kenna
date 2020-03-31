@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenna - Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.1/css/bulma.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <section class="first no-margin">
+        <div class="hero is-medium features" id="no-padding">
+            <div class="hero-body">
+                <h1 class="title is-1 has-text-centered has-text-white">Generate a Kenna</h1>
+                <p class="subtitle is-3 has-text-centered has-text-white">Create a Kenna with a couple clicks.</p>
+                <div class="has-text-centered">
+                    <a href="https://kewbish.github.io/kenna" class="button">&lt; Back to main</a>
+                    <a href="#gen" class="button">Get started ⬇️</a>
+                    <a href="https://github.com/kewbish/kenna" class="button">I'll develop by myself ⚙️</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="box light" id="gen">
+                <h1 class="title">Just a couple questions.</h1>
+                <form action="">
+                    <div class="field">
+                        <label class="label">How many classes do you teach?</label>
+                        <div class="control">
+                            <input class="input" type="number" placeholder="3">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">What's the name of class #1?</label>
+                        <div class="control">
+                            <input type="text" class="input" placeholder="English">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">What's your email?</label>
+                        <div class="control">
+                            <input type="email" class="input" placeholder="hello@kenna.com">
+                            <p class="is-help">This will be used only as a contact and displayed to your students.</p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Name your Kenna.</label>
+                        <div class="control">
+                            <input type="text" class="input" placeholder="Kenna Academy - English">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Describe your Kenna.</label>
+                        <div class="control">
+                            <input type="text" class="input" placeholder="Built with 💖 with Kenna">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button type="submit" class="button is-dark">Generate Kenna</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="features last">
+        <h1 class="subtitle has-text-white"><a class="link" href="https://github.com/kewbish/kenna">Kenna</a> by <a
+                class="link" href="https://kewbish.github.io">Kewbish</a> - Open Source under the MIT License.</p>
+    </footer>
+</body>
+
+</html>
