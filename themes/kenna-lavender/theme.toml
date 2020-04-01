@@ -1,11 +1,7 @@
-
-name = "Kenna"
+name = "Kenna Lavender"
 license = "MIT"
 licenselink = "https://github.com/kewbish/kenna"
-description = ""
 homepage = "https://kewbish.github.io/kenna"
-tags = []
-features = []
 min_version = "0.41"
 
 [author]
