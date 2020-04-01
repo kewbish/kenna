@@ -46,7 +46,8 @@ const app = new Vue({
             var archetypesDefaultString = `---\ntitle: "{{ replace .Name "-" " " | title }}"\ndate: {{ .Date }}\npublishdate: {{ .Date }}\nclass: "${className}"\n---\n`;
             archetypesF.file("default.md", archetypesDefaultString);
             // generate themes folder
-            var themesF = zip.folder(`themes\\${this.kenna-theme}`);
+            var themesTF = zip.folder(`themes`);
+            var themesF = themesTF.folder(`${this.kennaTheme}`);
             var themesArchetypesF = themesF.folder("archetypes");
             themesArchetypesF.file("default.md","+++\n+++");
             if (this.kennaTheme == "kenna-lavender"){
@@ -58,7 +59,7 @@ const app = new Vue({
                 themesStaticF.loadAsync(staticBase64, {base64: true, createFolders: true});
                 var themesStaticAdminF = themesStaticF.folder("admin");
                 var themesStaticAdminConfigSub = ``;
-                for (let i = 0; i < classNames.length; i++) {
+                for (let i = 0; i < this.classNames.length; i++) {
                     themesStaticAdminConfigSub += `\n- name: '${this.classNames[i].toLowerCase().replace(" ","")}'\n\tlabel: 'Kenna Post - ${this.classNames[i]}'\n\tfolder: 'content/${this.classNames[i].toLowerCase().replace(" ","")}'\n\tcreate: true\n\tslug: "{{year}}{{month}}{{day}}-{{slug}}"\n\teditor:\n\t\tpreview: true\n\tfields:\n\t\t- { label: 'Title', name: 'title', widget: 'string' }\n\t\t- { label: 'Publish Date', name: 'publishdate', widget: 'datetime' }\n\t\t- { label: 'Due Date', name: 'date', widget: 'datetime' }\n\t\t- { label: 'Class', name: class, widget: 'string' }\n\t\t- { label: 'Body', name: 'body', widget: 'markdown' }`;
                 }
                 var themesStaticAdminConfig = `backend:\n\tname: github\n\trepo: kewbish/kenna\nmedia_folder: static/img\ncollections:` + themesStaticAdminConfigSub;
