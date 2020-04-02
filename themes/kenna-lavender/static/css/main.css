@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@200&display=swap');
 :root {
     --cover-gradient: #6a45807e;
     --background-shadow: #3d214d;
@@ -108,11 +109,11 @@ button{
 .single-wrapper div{
     padding: 0 10px;
 }
-@font-face{
+/* @font-face{
     font-family: Montserrat;
     src: url("../fonts/Montserrat-Medium.ttf");
 }
 @font-face{
     font-family: "Abril Fatface";
     src: url("../fonts/AbrilFatface-Regular.ttf");
-}
+} */

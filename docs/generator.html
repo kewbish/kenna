@@ -51,6 +51,12 @@
                         </div>
                     </div>
                     <div class="field">
+                        <label class="label">What's your GitHub username?</label>
+                        <div class="control">
+                            <input type="text" class="input" placeholder="Kenna" v-model="ghName">
+                        </div>
+                    </div>
+                    <div class="field">
                         <label class="label">Name your Kenna.</label>
                         <div class="control">
                             <input type="text" class="input" placeholder="Kenna Academy" v-model="kennaName">
@@ -65,7 +71,11 @@
                     <div class="field">
                         <label class="label">Theme your Kenna.</label>
                         <div class="control">
-                            <input type="text" class="input" placeholder="kenna-lavender" v-model="kennaTheme">
+                            <div class="select">
+                                <select v-model="kennaTheme">
+                                    <option>kenna-lavender</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="field">
