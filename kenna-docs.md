@@ -3,7 +3,18 @@ Kenna is built for non-technical teachers to build blogs and an online prescence
 If any point in this documentation file is unclear, please open an issue here on GitHub or email kewbish@gmail.com - I'll do my best to revise the documentation to make it more clear and help you out.  
 Alternatively, if you'd like to file a change yourself (and know how to do so - GitHub knowledge is required), please open a PR; I promise to review the changes as soon as I can.  
 
+If you'd like to use a streamlined generator, check out [KennaGen](https://kewbish.github.io/kenna/generator.html). If you'd like to customize further (with a little extra work - unless you've signed up for the Kenna Suite), check out the [manual instructions](#manually-editing-kenna).  
+As well, do check out Kenna Lite and Kenna Suite - all information can be found [on the main site](https://kewbish.github.io/kenna).
+
 ## Table of Contents
+- [Using KennaGen](#using-kennagen)
+- [Manually generating a Kenna](#manually-editing-kenna)
+
+## Using KennaGen
+[KennaGen](https://kewbish.github.io/kenna/generator.html) is a free tool to generate a Kenna, and automate much of the customization. However, you'll need to have Hugo installed. Instructions can be found [here]((https://gohugo.io/getting-started/). As well, set up a GitHub account, and create a repository named `your-name.github.io`, with [your-name] being your username.  
+Simply fill in your details, and KennaGen will generate a `.zip` file for you. Unpack this zip file, and open Terminal. Run `hugo`, which will generate a `public` folder. This is what you'll need to upload to your GitHub repository. Further information can be found [here](#github-setup).  
+
+## Manually Editing Kenna
 - [Download Kenna](#download-kenna)
 - [Customizing the base theme](#customizing-the-base-theme)
 - [Changing class names](#changing-class-names)
@@ -19,7 +30,7 @@ Next, unzip the files with your favourite unZIPper. (Usually, right-click and se
 As well, set up Hugo on your computer - instructions to do so can be found [here](https://gohugo.io/getting-started/).  
 
 ## Customizing the base theme
-*Note: You'll need Hugo to be installed to re-deploy and customize your blog. Instructions to do so can be found [here](https://gohugo.io/getting-started/). In the future, a setup script will be provided.*
+*Note: You'll need Hugo to be installed to re-deploy and customize your blog. Instructions to do so can be found [here](https://gohugo.io/getting-started/).*
 In your file explorer, navigate to the unzipped files, and find the `theme\kenna\static\css\main.css` file.  
 Open the file by double-clicking it (opening in Notepad is fine!).  
 The first element there will be a `:root{}` element, which you can customize.  
@@ -93,7 +104,7 @@ Change the following:
     * Change the `name`, `label` and `folder` for each collection. There should be one for each class. `name` and `folder` cannot have spaces, while `label` can.
 
 ## GitHub Setup
-This requires Hugo to be installed. *In the future, a setup script will be provided.*
+This requires Hugo to be installed.  
 Sign up for a GitHub account. Create a repository by clicking the `+` button in the upper-right. Make sure the repository name is `yourusername.github.io`. For example, if your username is kewbish, the repository name should be `kewbish.github.io`.  
 Navigate to `themes\kenna\layouts\static\admin\config.yml` and open it in Notepad. Change the `repo: kewbish/kenna` line to `repo: yourusername/yourusername.github.io`.  
 Navigate to [this link](https://github.com/settings/developers), and make a `New OAuth App`. Put whatever you'd like for the name, but ensure that the Homepage URL is `yourusername.github.io`, where yourusername is your username. As well, make sure the `Authorization callback URL` goes to `https://api.netlify.com/auth/done`.  
