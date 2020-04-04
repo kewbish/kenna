@@ -17,7 +17,7 @@ const app = new Vue({
             var zip = new JSZip();
             // generate config.toml string
             if (this.kennaName != "" || this.kennaTheme != "") {
-                var configTomlString = `baseURL = "/"\nlanguageCode = "en-us"\ntitle = ${this.kennaName}\ntheme = ${this.kennaTheme}\nrelativeURLs = true\ndisableKinds = ["taxonomy", "taxonomyTerm", "section"]\n`;
+                var configTomlString = `baseURL = "/"\nlanguageCode = "en-us"\ntitle = "${this.kennaName}"\ntheme = "${this.kennaTheme}"\nrelativeURLs = true\ndisableKinds = ["taxonomy", "taxonomyTerm", "section"]\n`;
                 zip.file("config.toml", configTomlString);
             }
             else {
@@ -51,13 +51,6 @@ const app = new Vue({
             var themesF = themesTF.folder(`${this.kennaTheme}`);
             var themesArchetypesF = themesF.folder("archetypes");
             themesArchetypesF.file("default.md","+++\n+++");
-            // add Hugo binary
-            JSZipUtils.getBinaryContent("genfiles/hugo.zip", function (err, data) {
-                if(err){
-                    console.log("There's been an error - please try again.")
-                }
-                zip.file("hugo.exe", data, {binary: true});
-            })
             // handle themes
             if (this.kennaTheme == "kenna-lavender"){
                 var kennaTomlString = `name = "Kenna Lavender"\nlicense = "MIT"\nhomepage = "https://kewbish.github.io/kenna"\nmin_version = "0.41"\n[author]\n\tname = "Kewbish"\nhomepage = "https://kewbish.github.io"`;
@@ -70,7 +63,7 @@ const app = new Vue({
                 themesDefaultsF.file("list.html", themesDefaultListString);
                 var themesDefaultSingleString = `<!DOCTYPE html><html lang="en" class="single"><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>{{.Title}}</title> <link rel="stylesheet" href="../../../css/main.css"></head><body> <section> <div class="single-wrapper"> <h1>{{.Title}}</h1> <p>Due{{.Date.Format "02 January 2006"}}</p><div class="custom-div"></div><a href="../../../index.html#main-information"><p>&lt; Back to main</p></a>{{.Content}}</div></section></body></html>`;
                 themesDefaultsF.file("single.html", themesDefaultSingleString);
-                var themesPartialsF = themesF.folder("partials");
+                var themesPartialsF = themesLayoutsF.folder("partials");
                 themesPartialsF.file("footer.html", " ");
                 themesPartialsF.file("head.html", " ");
                 themesPartialsF.file("header.html", " ");
@@ -88,7 +81,7 @@ const app = new Vue({
                 themesLayoutsF.file("index.html", themeIndexString);
                 var themesStaticF = themesF.folder("static");
                 var themesStaticCssF = themesStaticF.folder("css");
-                var themesStaticCssString = `@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@200&display=swap');:root{--cover-gradient: #6a45807e; --background-shadow: #3d214d; --button-background: #6a45807e; --base-one: black; --base-two: white; --color-one: #9873c2; --color-two: #ba97e2; --font-one: Montserrat; --font-two: "Abril Fatface"; --back-image: url("https://images.unsplash.com/photo-1477511801984-4ad318ed9846?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");}*{padding: 0; margin: 0;}html{background-color: var(--base-two); font-family: var(--font-one);}h1{font-family: var(--font-two); font-size: 50px; letter-spacing: 2.2px; padding: 5px;}h2{font-family: var(--font-one); font-size: 24px; margin: 5px; padding: 5px;}p{font-family: var(--font-one); font-size: 20px; margin: 5px; padding: 5px;}a{width: 100%;}.custom-div{border-bottom: 1px var(--base-one) solid; padding-right: 10px; margin-bottom: 10px;}.header{display: flex; justify-content: center; flex-direction: column; background-image: linear-gradient(var(--cover-gradient), var(--cover-gradient)), var(--back-image); background-size: cover; height: 70vh; color: var(--base-two); padding: 8%;}.header-inner h1{text-shadow: 3px 3px 3px var(--color-one);}.header-inner{background-image: linear-gradient(var(--cover-gradient), var(--cover-gradient)); box-shadow: 15px 15px var(--background-shadow); padding: 20px;}button{background-color: var(--button-background);border-radius: 28px;border: 1px solid var(--base-two);display: inline-block; color: var(--base-two); margin: 5px; padding: 15px 30px; font-family: var(--font-one); font-size: 20px; box-sizing: border-box; cursor: pointer;}.main-split{display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 30px; padding: 5%;}.footer{background-color: var(--color-two); padding: 30px;}.footer div{background-color: var(--base-two); box-shadow: 15px 15px var(--color-one); padding: 10px;}.single{/*background-color: var(--color-two);*/ background-image: linear-gradient(var(--cover-gradient), var(--cover-gradient)), var(--back-image); background-size: cover;}.single-wrapper{margin: 3%; padding: 10px; background-color: var(--base-two); box-shadow: 15px 15px var(--color-one);}.single-wrapper div{padding: 0 10px;}`;
+                var themesStaticCssString = `@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@400&display=swap');:root{--cover-gradient: #6a45807e; --background-shadow: #3d214d; --button-background: #6a45807e; --base-one: black; --base-two: white; --color-one: #9873c2; --color-two: #ba97e2; --font-one: Montserrat; --font-two: "Abril Fatface"; --back-image: url("https://images.unsplash.com/photo-1477511801984-4ad318ed9846?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");}*{padding: 0; margin: 0;}html{background-color: var(--base-two); font-family: var(--font-one);}h1{font-family: var(--font-two); font-size: 50px; letter-spacing: 2.2px; padding: 5px;}h2{font-family: var(--font-one); font-size: 24px; margin: 5px; padding: 5px;}p{font-family: var(--font-one); font-size: 20px; margin: 5px; padding: 5px;}a{width: 100%;}.custom-div{border-bottom: 1px var(--base-one) solid; padding-right: 10px; margin-bottom: 10px;}.header{display: flex; justify-content: center; flex-direction: column; background-image: linear-gradient(var(--cover-gradient), var(--cover-gradient)), var(--back-image); background-size: cover; height: 70vh; color: var(--base-two); padding: 8%;}.header-inner h1{text-shadow: 3px 3px 3px var(--color-one);}.header-inner{background-image: linear-gradient(var(--cover-gradient), var(--cover-gradient)); box-shadow: 15px 15px var(--background-shadow); padding: 20px;}button{background-color: var(--button-background);border-radius: 28px;border: 1px solid var(--base-two);display: inline-block; color: var(--base-two); margin: 5px; padding: 15px 30px; font-family: var(--font-one); font-size: 20px; box-sizing: border-box; cursor: pointer;}.main-split{display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 30px; padding: 5%;}.footer{background-color: var(--color-two); padding: 30px;}.footer div{background-color: var(--base-two); box-shadow: 15px 15px var(--color-one); padding: 10px;}.single{/*background-color: var(--color-two);*/ background-image: linear-gradient(var(--cover-gradient), var(--cover-gradient)), var(--back-image); background-size: cover;}.single-wrapper{margin: 3%; padding: 10px; background-color: var(--base-two); box-shadow: 15px 15px var(--color-one);}.single-wrapper div{padding: 0 10px;}`;
                 themesStaticCssF.file("main.css", themesStaticCssString);
                 var themesStaticAdminF = themesStaticF.folder("admin");
                 var themesStaticAdminConfigSub = ``;
