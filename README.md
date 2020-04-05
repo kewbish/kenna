@@ -5,8 +5,7 @@ Made with Hugo and NetlifyCMS, March 2020 - current.
 Created by [Kewbish](https://github.com/kewbish).  
 Released under the MIT License.  
 ## Documentation
-Please see the [docs file](kenna-docs.md).  
-Additional documentation for KennaGen will be provided soon. 
+Please see the [docs file](kenna-docs.md).   
 ## Requests for Themes
 Want a particular theme with different fonts, colours, and designs? Please suggest a theme in the `Issues` pane of this repository.  
 Open an issue and please note:
