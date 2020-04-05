@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenna - An elegant boilerplate for teachers.</title>
+    <title>Kenna - An elegant system for teachers.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.1/css/bulma.css">
     <link rel="stylesheet" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js"></script>
@@ -19,7 +19,7 @@
                         src="https://vectr.com/drvector/b9Fnk1qBJ.svg?width=200&height=200&select=b9Fnk1qBJpage0"></div>
                 <h1 class="title is-1 has-text-centered has-text-white">Kenna</h1>
                 <p style="margin-bottom: 0;" class="subtitle is-3 has-text-centered has-text-white">An elegant
-                    boilerplate for teachers to build online presences.</p>
+                    system for teachers to build online presences.</p>
                 <div class="has-text-centered" style="margin-top: 25px;">
                     <p><a href="#more" class="button">Learn more</a>
                         <a href="https://github.com/kewbish/kenna" class="button">Source on GitHub</a> <a href="generator.html" class="button">Try KennaGen ⚙️[beta]</a></p>
@@ -34,11 +34,11 @@
                     <div class="box light">
                         <h1 class="title">Update your students with a single click.</h1>
                         <p>By setting up a Kenna, you can provide information to your class, allow students to check
-                            homework, distribute video-conference ID's, and share links to online content (save the 🌲🌳🌲s!) All on one centrally-published, easy-to-edit platform.<br>Right now, Kenna's ready to be used, but we're working on a generator to streamline the process - subscribe to receive updates when it's released.
+                            homework, distribute video-conference ID's, and share links to online content (save the 🌲🌳🌲s!) All on one centrally-published, easy-to-edit platform.<br>Right now, Kenna's ready to be used - get updates on our new generator by signing up below!
                         </p><br>
-                        <form action="https://formspree.io/xvoqjeww" method="POST">
+                        <form action="https://formspree.io/myypqrag" method="POST">
                             <div class="field">
-                                <input type="email" placeholder="📧 - Mail please!" class="input">
+                                <input required="required" type="email" placeholder="📧 - Mail please!" class="input">
                             </div>
                             <div class="field">
                                 <div class="control">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="pricing-plan">
-                    <div class="plan-header">Open Source ❤️</div>
+                    <div class="plan-header">Kenna Open ❤️</div>
                     <div class="plan-price"><span class="plan-price-amount"><span
                                 class="plan-price-currency">$</span>Free</span> / forever</div>
                     <div class="plan-items">
@@ -114,19 +114,31 @@
                     <div class="field">
                         <label class="label">Name</label>
                         <div class="control">
-                            <input type="text" class="input" placeholder="👥 Name">
+                            <input required="required" type="text" class="input" placeholder="👥 Name">
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">Email</label>
                         <div class="control">
-                            <input type="email" class="input" placeholder="📧 Email">
+                            <input required="required" type="email" class="input" placeholder="📧 Email">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Kenna Plan</label>
+                        <div class="control">
+                            <div class="select">
+                                <select>
+                                    <option>Kenna Open ❤️</option>
+                                    <option>Kenna Lite ⚡</option>
+                                    <option>Kenna Suite 💡</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <div class="field">
                         <label class="label">Message</label>
                         <div class="control">
-                            <textarea class="textarea" placeholder="📜 What can we build together?"></textarea>
+                            <textarea required="required" class="textarea" placeholder="📜 What can we build together?"></textarea>
                         </div>
                     </div>
                     <div class="field">
